@@ -16,7 +16,7 @@ This main underlying package is [colorize](https://pub.dev/packages/colorize).
 ```dart
 import 'package:rich_console/printRich.dart';
 
-printRich("This is my String", fg: Shade.BLUE);
+printRich("This is my String", fg: Shade.BLUE, italic: true);
 ```
 
 ### Functions
@@ -30,15 +30,15 @@ printRich("This is my String", fg: Shade.BLUE);
 
 ### Settable Parameters
 
-* Shade *fg* (foreground color)
-* Shade *bg* (background color)
-* bool *bold* 
-* bool *dark* 
-* bool *italic* 
-* bool *underline* 
-* bool *blink* 
-* bool *reverse* 
-* bool *concealed* 
+* Shade **fg** (foreground color)
+* Shade **bg** (background color)
+* bool **bold** 
+* bool **dark** 
+* bool **italic** 
+* bool **underline** 
+* bool **blink** 
+* bool **reverse** 
+* bool **concealed** 
 
 
 
