@@ -1,6 +1,6 @@
-A natural way of printing text styles and colors in flutter
+A natural way of printing text styles and colors in flutter.
 
-[![pub package](https://img.shields.io/pub/v/http.svg)](https://pub.dev/packages/http)
+[![pub package](https://img.shields.io/pub/v/http.svg)](https://pub.dev/packages/rich_console)
 
 This packages contains a set of configurations that make it easy to differentiate console 
 outputs and print all sort of colors. It's *multi-IDE* compatible as it is based on basic ansi 
