@@ -16,7 +16,11 @@ This main underlying package is [colorize](https://pub.dev/packages/colorize).
 ```dart
 import 'package:rich_console/printRich.dart';
 
-printRich("This is my String", fg: Shade.BLUE, italic: true);
+void main(){
+  
+  printRich("This is my String", fg: Shade.BLUE, italic: true);
+  
+}
 ```
 
 ### Functions
