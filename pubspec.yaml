@@ -2,7 +2,7 @@ name: rich_console
 description: A natural way of printing text styles and colors in flutter.
 homepage: https://github.com/polarby/rich_console
 
-version: 0.11.0
+version: 0.11.1
 
 environment:
   sdk: ">=2.16.1 <3.0.0"
