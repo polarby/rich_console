@@ -1,3 +1,2 @@
-## 1.0.2
-
-* TODO: updated model and added a few features
+## 1.0.3
+fix color warning bug

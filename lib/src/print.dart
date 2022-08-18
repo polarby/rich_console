@@ -53,10 +53,10 @@ void printRich(
 
 ///Prints [object] as a warning
 void printWarning(Object? object, [RichStyle? style]) {
-  printRich(object, foreground: Colors.red, style: style);
+  printRich(object, foreground: Colors.yellow, style: style);
 }
 
 ///Prints [object] as an error
 void printError(Object? object, [RichStyle? style]) {
-  printRich(object, foreground: Colors.yellow, style: style);
+  printRich(object, foreground: Colors.red, style: style);
 }
