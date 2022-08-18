@@ -1,3 +1,3 @@
-## 0.0.1
+## 1.0.2
 
-* TODO: Describe initial release.
+* TODO: updated model and added a few features
