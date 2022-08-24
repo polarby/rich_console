@@ -23,11 +23,15 @@ void printRich(
   bool framed = false,
   bool encircled = false,
   bool overlined = false,
+  bool timestamp = true,
   Color? underlineColor,
   RichStyle? style,
 }) {
+  final time = DateTime.now();
+  final stringTime =
+      "${time.hour}h:${time.minute}min:${time.second}sec:${time.millisecond}ms | ";
   if (style != null) {
-    print(style.applyTo(object.toString()));
+    print((timestamp ? stringTime : "") + style.applyTo(object.toString()));
   } else {
     final toPrint = RichStyle(
       foreground: foreground ?? fg?.toColor(),
@@ -47,7 +51,7 @@ void printRich(
       overlined: overlined,
       underlineColor: underlineColor,
     ).applyTo(object.toString());
-    print(toPrint);
+    print((timestamp ? stringTime : "") + toPrint);
   }
 }
 
