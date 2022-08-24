@@ -23,7 +23,7 @@ void printRich(
   bool framed = false,
   bool encircled = false,
   bool overlined = false,
-  bool timestamp = true,
+  bool timestamp = false,
   Color? underlineColor,
   RichStyle? style,
 }) {

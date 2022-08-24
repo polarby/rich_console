@@ -42,7 +42,7 @@ void main() {
     printRich("Encircled", encircled: true);
 
     final yourReusableStyle = RichStyle(italic: true, foreground: Colors.pinkAccent);
-    printRich("Your Text", style: yourReusableStyle);
+    printRich("Your Text", style: yourReusableStyle, timestamp: true);
     printRich("Another Text", style: yourReusableStyle.copyWith(framed: true));
   });
 }
