@@ -10,3 +10,6 @@ a precise time.
 - start time timestamp
 - shade removal
 - update sdk
+
+## 1.0.6
+- downgrade intl for more universal application
