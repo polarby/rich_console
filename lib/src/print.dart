@@ -4,10 +4,16 @@ part of rich_console;
 ///and features might not be supported by your IDE. For more info regarding
 ///supportability please look at [RichStyle] or visit
 ///[ANSI escape code documentation](https://en.wikipedia.org/wiki/ANSI_escape_code)
+///
+/// * Timestamp
+/// If a [startTime] is provided the timestamp will be the duration from the
+/// start time to now.
+/// If no [startTime] the current date time with the [timeFormatter] will be
+/// displayed as timestamp.
+///
 void printRich(
   Object? object, {
-  @Deprecated('Use [background]') Shade? bg,
-  @Deprecated('Use [foreground]') Shade? fg,
+  bool printToConsole = kDebugMode,
   Color? foreground,
   Color? background,
   bool italic = false,
@@ -24,34 +30,45 @@ void printRich(
   bool encircled = false,
   bool overlined = false,
   bool timestamp = false,
+  DateTime? startTime,
+  DateFormat? timeFormatter,
   Color? underlineColor,
   RichStyle? style,
 }) {
+  // * Time stamp
+  String stringTime = "";
   final time = DateTime.now();
-  final stringTime =
-      "${time.hour}h:${time.minute}min:${time.second}sec:${time.millisecond}ms | ";
-  if (style != null) {
-    print((timestamp ? stringTime : "") + style.applyTo(object.toString()));
-  } else {
-    final toPrint = RichStyle(
-      foreground: foreground ?? fg?.toColor(),
-      background: background ?? bg?.toColor(),
-      italic: italic,
-      bold: bold,
-      underline: underline,
-      slowBlink: slowBlink,
-      rapidBlink: rapidBlink,
-      invert: invert,
-      conceal: conceal,
-      strike: strike,
-      gothic: gothic,
-      doubleUnderline: doubleUnderline,
-      framed: framed,
-      encircled: encircled,
-      overlined: overlined,
-      underlineColor: underlineColor,
-    ).applyTo(object.toString());
-    print((timestamp ? stringTime : "") + toPrint);
+  if (timestamp) {
+    if (startTime == null) {
+      final formatter = timeFormatter ?? DateFormat('hh:mm:ss');
+      stringTime = "${formatter.format(time)} | ";
+    } else {
+      stringTime = "${time.difference(startTime)} | ";
+    }
+  }
+
+  // * print style
+  final printStyle = (style ?? RichStyle()).copyWith(
+    foreground: foreground,
+    background: background,
+    italic: italic,
+    bold: bold,
+    underline: underline,
+    slowBlink: slowBlink,
+    rapidBlink: rapidBlink,
+    invert: invert,
+    conceal: conceal,
+    strike: strike,
+    gothic: gothic,
+    doubleUnderline: doubleUnderline,
+    framed: framed,
+    encircled: encircled,
+    overlined: overlined,
+    underlineColor: underlineColor,
+  );
+
+  if (printToConsole) {
+    print(stringTime + printStyle.applyTo(object.toString()));
   }
 }
 

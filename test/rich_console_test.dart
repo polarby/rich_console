@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:rich_console/rich_console.dart';
 
 void main() {
-  test('adds one to input values', () {
+  test('adds one to input values', () async {
     printRich(
       "WildMix",
       foreground: Colors.red,
@@ -41,7 +41,13 @@ void main() {
     printRich("Framed", framed: true);
     printRich("Encircled", encircled: true);
 
-    final yourReusableStyle = RichStyle(italic: true, foreground: Colors.pinkAccent);
+    final startTime = DateTime.now();
+    printRich("Stop Time 1", timestamp: true, startTime: startTime);
+    await Future.delayed(const Duration(milliseconds: 230));
+    printRich("Stop Time 2", timestamp: true, startTime: startTime);
+
+    final yourReusableStyle =
+        RichStyle(italic: true, foreground: Colors.pinkAccent);
     printRich("Your Text", style: yourReusableStyle, timestamp: true);
     printRich("Another Text", style: yourReusableStyle.copyWith(framed: true));
   });

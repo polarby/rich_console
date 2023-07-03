@@ -4,3 +4,7 @@ fix color warning bug
 ## 1.0.4
 Added timestamp. You can now call `printRich("yourText", timestamp: true);` sign your outputs with
 a precise time.
+
+## 1.0.5
+- timestamp settable formatter
+- start time timestamp
