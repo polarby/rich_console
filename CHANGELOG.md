@@ -8,3 +8,5 @@ a precise time.
 ## 1.0.5
 - timestamp settable formatter
 - start time timestamp
+- shade removal
+- update sdk
