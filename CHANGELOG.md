@@ -13,3 +13,6 @@ a precise time.
 
 ## 1.0.6
 - downgrade intl for more universal application
+
+## 1.0.7
+- update export
