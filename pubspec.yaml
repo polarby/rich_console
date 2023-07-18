@@ -1,7 +1,7 @@
 name: rich_console
 description: Enrich your debugging, console programs or
   analysis feedbacks - Print colors and styles in your console.
-version: 1.0.7
+version: 1.0.7+1
 homepage: https://github.com/polarby/rich_console
 
 environment:
@@ -11,7 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  intl: ^0.18.1
+  intl: ^0.18.0
 
 
 dev_dependencies:
