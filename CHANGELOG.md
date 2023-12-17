@@ -20,5 +20,5 @@ a precise time.
 ## 1.0.7+1
 - downgrade intl for more universal application
 
-## 1.0.7
+## 1.0.7+2
 - upgrade intl 
